@@ -7,10 +7,10 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-import axios from "axios";
 import "./Dashboard.css";
 import { dashboardData } from "../../constant/Dashboard.constant";
 import { useTranslation } from "react-i18next";
+import apiClient from "../../config/apiClient";
 
 const STATUS_CODES = Object.freeze({
   IN_PROGRESS: "inProgress",
@@ -71,15 +71,12 @@ const Dashboard = () => {
         setLoading(true);
         setApiError(null);
         
-        const response = await axios.get(
-          "https://letters-test-hfaffqhaa0crfjgj.westeurope-01.azurewebsites.net/Letters",
-          {
-            params: {
-              orderBy: "LetterAddressee",
-              pageNumber: 1
-            }
+        const response = await apiClient.get("/Letters", {
+          params: {
+            orderBy: "LetterAddressee",
+            pageNumber: 1
           }
-        );
+        });
         
         console.log("API Response:", response.data);
         
@@ -88,7 +85,17 @@ const Dashboard = () => {
         
       } catch (error) {
         console.error("Error fetching letters:", error);
-        setApiError(error.message);
+        let errorMsg = "Failed to load letters";
+        
+        if (error.response?.status === 401) {
+          errorMsg = "Unauthorized: Please check your authentication token";
+        } else if (error.response?.data?.message) {
+          errorMsg = error.response.data.message;
+        } else if (error.message) {
+          errorMsg = error.message;
+        }
+        
+        setApiError(errorMsg);
       } finally {
         setLoading(false);
       }
