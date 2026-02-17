@@ -9,6 +9,11 @@ import Success from "./components/Success/Success";
 import { useTranslation } from "react-i18next"; // <-- use this
 import LetterShell from "./components/LetterShell/LetterShell";
 import ArchiveLetter from "./components/ArchiveLetter/ArchiveLetter";
+import AdminOutgoing from "./components/AdminOutgoing/AdminOutgoing";
+import AdminIncoming from "./components/AdminIncoming/AdminIncoming";
+import ManualQueue from "./components/ManualQueue/ManualQueue"; 
+import Settings from "./components/Settings/Settings";
+import RoutingRules from "./components/RoutingRules/RoutingRules";
 
 function AppContent() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -30,26 +35,26 @@ function AppContent() {
       children: [
         {
           label: t("sidebar.outgoing"),
-          onClick: (item) => console.log("Navigating to:", item.label),
+          onClick: (item) => navigate("/admin-outgoing"),
         },
         {
           label: t("sidebar.incoming"),
-          onClick: (item) => console.log("Navigating to:", item.label),
+          onClick: (item) => navigate("/admin-incoming"),
         },
         {
           label: t("sidebar.routingRules"),
-          onClick: (item) => console.log("Navigating to:", item.label),
+          onClick: (item) => navigate("/routing-rules"),
         },
         {
           label: t("sidebar.manualQueues"),
           badge: "2",
-          onClick: (item) => console.log("Navigating to:", item.label),
+          onClick: (item) => navigate("/manual-queue"),
         },
       ],
     },
     {
       label: t("sidebar.settings"),
-      onClick: (item) => console.log("Navigating to:", item.label),
+      onClick: (item) => navigate("/settings"),
     },
   ];
 
@@ -90,6 +95,11 @@ function AppContent() {
           <Route path="/letter-shell" element={<LetterShell />} />
           <Route path="/success" element={<Success />} />
           <Route path="/letter-archive" element={<ArchiveLetter />} />
+          <Route path="/admin-outgoing" element={<AdminOutgoing />} />
+          <Route path="/admin-incoming" element={<AdminIncoming />} />
+          <Route path="/routing-rules" element={<RoutingRules />} />
+          <Route path="/manual-queue" element={<ManualQueue />} />
+          <Route path="/settings" element={<Settings />} />
         </Routes>
       </div>
     </div>

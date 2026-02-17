@@ -1,0 +1,65 @@
+.month-filter {
+  display: flex;
+  align-items: center;
+  
+}
+.month-display {
+  padding: 8px 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f5f5f5;
+  font-weight: 500;
+  font-size: 14px;
+  min-width: 120px;
+  text-align: center;
+}
+
+.month-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #00AB9E;
+}
+
+.month-arrow:hover {
+  color: #028f83;
+}
+
+.tags-cell {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tag-group {
+  display: flex;
+}
+
+.tag-dark-part {
+  background-color: #3f3f3f;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px 0 0 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.tag-light-part {
+  background-color: #8c8c8c;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 0 20px 20px 0;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.tag {
+  background-color: #8c8c8c;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}

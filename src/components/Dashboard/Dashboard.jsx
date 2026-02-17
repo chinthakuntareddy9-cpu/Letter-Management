@@ -7,10 +7,10 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
+import axios from "axios";
 import "./Dashboard.css";
 import { dashboardData } from "../../constant/Dashboard.constant";
 import { useTranslation } from "react-i18next";
-import apiClient from "../../config/apiClient";
 
 const STATUS_CODES = Object.freeze({
   IN_PROGRESS: "inProgress",
@@ -26,6 +26,7 @@ const Dashboard = () => {
 
   // Hide element only on /new-letter
   const showElement = pathname === "/other-letters";
+  const AdminOutGoing = pathname === "/admin-outgoing";
 
   // Map English source statuses to stable codes (if your data uses strings)
   const normalizeStatus = (status) => {
@@ -65,18 +66,28 @@ const Dashboard = () => {
   const [apiError, setApiError] = useState(null);
 
   // Fetch data from API
+  // TEMPORARILY DISABLED - Using mock data from Dashboard.constant instead
+  // Uncomment when authentication token is available
+  /*
   useEffect(() => {
     const fetchLetters = async () => {
       try {
         setLoading(true);
         setApiError(null);
-        
-        const response = await apiClient.get("/Letters", {
-          params: {
-            orderBy: "LetterAddressee",
-            pageNumber: 1
+        const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6InNNMV95QXhWOEdWNHlOLUI2ajJ4em1pazVBbyJ9.eyJhdWQiOiI3N2JmMDZkMi0zNjNhLTQwZDEtYjExMy02M2Q0NGZhM2IzZjYiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vMjhmODEzNGQtMmIwYi00Yzk3LTk5NzctN2Q0NmZiNjExYTBhL3YyLjAiLCJpYXQiOjE3NzEzMDQ5MjMsIm5iZiI6MTc3MTMwNDkyMywiZXhwIjoxNzcxMzA4ODIzLCJlbWFpbCI6InN0ZXZlbi52YW5ob29mQHRlc3QuY29scnV5dGdyb3VwLmNvbSIsIm5hbWUiOiJTdGV2ZW4gVmFuaG9vZiIsIm9pZCI6ImNmMDNkM2U0LWJlNzItNDIzNy05YzgyLTgxNDcxZWM3MmYyMiIsInByZWZlcnJlZF91c2VybmFtZSI6InN0ZXZlbi52YW5ob29mQHRlc3QuY29scnV5dGdyb3VwLmNvbSIsInJoIjoiMS5BWGtBVFJQNEtBc3JsMHlaZDMxRy0yRWFDdElHdjNjNk50RkFzUk5qMUUtanNfWUFBQ0o1QUEuIiwic2lkIjoiMDAyMTI0N2EtYjYzMy1jN2FkLTgyMmYtNTViZTAxNzEzYjlmIiwic3ViIjoiN3k3bnA0YjlqbkV5aVlLWWM1RzJUTExDbXJuX2Mtd3JUMEs2U1BSdjNJcyIsInRpZCI6IjI4ZjgxMzRkLTJiMGItNGM5Ny05OTc3LTdkNDZmYjYxMWEwYSIsInV0aSI6IlBKWmF1aHJiUjBhRm04RF9zZU5CQUEiLCJ2ZXIiOiIyLjAifQ.YNVVgW_02_Jlrfoam0yXmMi8IpXow5hBV4G-es6WEmjz7U9Dn7n-I-7qz8CMnyjxpEg-LETpRfv2Rk270hWQ0hbqs8tXSKars2J0okdT4LF05LF_umfqym_OWpDQFHOZFUzeo1iRDJDfsioMzXZmIApyrgx3DSCQfvx5dA4Ht_z--O0qPAmkYLI2AEF8fyC43CIFTz7PO5vEydz0dlcC6JOI3nXbIcSuacWASA3NHjyzMTGfv1yuVtYExISQJVhdE1Pk2_PeWfk9_d83JrrN9xINgDiK-zvbnKKA1isH2GwQNuPjuuB00TrdgWelaU396H_ml1psGwgYHS7MEX5ymA";
+        const response = await axios.get(
+          "https://letters-test-hfaffqhaa0crfjgj.westeurope-01.azurewebsites.net/Letters",
+          {
+            params: {
+              orderBy: "LetterAddressee",
+              pageNumber: 1
+            },
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
+            }
           }
-        });
+        );
         
         console.log("API Response:", response.data);
         
@@ -85,17 +96,7 @@ const Dashboard = () => {
         
       } catch (error) {
         console.error("Error fetching letters:", error);
-        let errorMsg = "Failed to load letters";
-        
-        if (error.response?.status === 401) {
-          errorMsg = "Unauthorized: Please check your authentication token";
-        } else if (error.response?.data?.message) {
-          errorMsg = error.response.data.message;
-        } else if (error.message) {
-          errorMsg = error.message;
-        }
-        
-        setApiError(errorMsg);
+        setApiError(error.message);
       } finally {
         setLoading(false);
       }
@@ -103,8 +104,17 @@ const Dashboard = () => {
 
     fetchLetters();
   }, []);
+  */
+
+  // Set loading to false to display mock data
+  useEffect(() => {
+    setLoading(false);
+    setApiError(null);
+  }, []);
 
   // Display loading state
+  // COMMENTED OUT - Using mock data instead
+  /*
   if (loading) {
     return (
       <div className="dashboard">
@@ -125,6 +135,7 @@ const Dashboard = () => {
       </div>
     );
   }
+  */
 
   const tStatus = (code) => {
     switch (code) {

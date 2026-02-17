@@ -199,46 +199,86 @@ const BulkLetter = () => {
       console.log("Validation passed!");
       setIsLoading(true);
       try {
-        // Prepare API request body with letterData key
+        // Prepare API request body with all required fields
         const letterData = {
+          reference: `BULK-${Date.now()}`,
+          appName: "LetterApp",
+          costId: "DEFAULT",
+          letterAddressee: `${formData.recipientFirstName} ${formData.recipientLastName}`,
+          contentFileName: uploadedFile?.name || "letter.pdf",
           recipient: {
             firstName: formData.recipientFirstName,
             lastName: formData.recipientLastName,
             company: formData.recipientCompany,
-            address: {
-              street: formData.recipientStreet,
-              houseNumber: formData.recipientHouseNo,
-              flatNumber: formData.recipientFlatNo,
-              city: formData.recipientCity,
-              zipCode: formData.recipientZipCode,
-              country: formData.recipientCountry,
-            },
-            notifySubject: formData.notifySubject,
-            notifyRecipients: emailRecipients.join(","),
+            street: formData.recipientStreet,
+            houseNumber: formData.recipientHouseNo,
+            flatNumber: formData.recipientFlatNo,
+            city: formData.recipientCity,
+            zipCode: formData.recipientZipCode,
+            country: formData.recipientCountry,
           },
           returnAddress: {
             firstName: formData.returnFirstName,
             lastName: formData.returnLastName,
             company: formData.returnCompany,
-            address: {
-              street: formData.returnStreet,
-              houseNumber: formData.returnHouseNo,
-              flatNumber: formData.returnFlatNo,
-              city: formData.returnCity,
-              zipCode: formData.returnZipCode,
-            },
+            street: formData.returnStreet,
+            houseNumber: formData.returnHouseNo,
+            flatNumber: formData.returnFlatNo,
+            city: formData.returnCity,
+            zipCode: formData.returnZipCode,
+            country: "Belgium",
           },
           mailOptions: {
             type: formData.mailType,
             language: formData.language,
           },
+          notifySubject: formData.notifySubject,
+          notifyRecipients: emailRecipients.join(","),
         };
 
         console.log("Sending data:", letterData);
-
+        const requestBody = {
+  appName: "PostMan",
+  contentFileName: "Test",
+  attachmentFilename: "myAttachment.pdf",
+  CustomerEndUser: {
+    requestorLogonId: "scn7vbq",
+    notificationEmailAddress: "steven.vanhoof@test.colruytgroup.com",
+    language: "EN"
+  },
+  letterAddressee: {
+    firstName: "Vikram1",
+    lastName: "Kumar",
+    fullName: "Vikram Kumar",
+    company: "Colruyt CGI",
+    address: {
+      street: "Groendreef",
+      houseNr: "14",
+      box: "H2",
+      zip: "608001",
+      municipality: "Brussels",
+      countryIso2: "BE"
+    }
+  },
+  returnAddress: {
+    street: "Helihavenlaan",
+    houseNr: "48 btw N5",
+    box: "H2",
+    zip: "1000",
+    municipality: "Brussels",
+    countryIso2: "BE"
+  },
+  registered: false,
+  prior: true,
+  reference: "Ref112",
+  costId: "004105",
+  subject: "test subject",
+  recipients: ["COC", "SVHB917", "MV7", "6158", "7VBQ"]
+};
         // Create FormData to handle file upload
         const formDataToSend = new FormData();
-        formDataToSend.append("letterData", JSON.stringify(letterData));
+       // formDataToSend.append("letterData", JSON.stringify(letterData));
+       formDataToSend.append("letterData", JSON.stringify(requestBody));
         formDataToSend.append("letter", uploadedFile);
 
         // Make API request using 
@@ -249,7 +289,6 @@ const BulkLetter = () => {
           {
             headers: {
               Authorization: `Bearer ${token}`,
-              "Content-Type": "application/json",
             }
           }
         );
