@@ -1,0 +1,121 @@
+{
+  "title": "Gestion des courriers",
+  "sidebar": {
+    "myLetters": "Mes courriers",
+    "otherLetters": "Autres courriers",
+    "admin": "Administration",
+    "outgoing": "Admin - Sortant",
+    "incoming": "Admin - Entrant",
+    "routingRules": "Règles de tri",
+    "manualQueues": "File d’attente manuelle",
+    "settings": "Paramètres"
+  },
+  "letterOverview": {
+    "otherLetters": {
+      "view": "Voir",
+      "others": "Rechercher des lettres envoyées par d'autres utilisateurs"
+    },
+    "infobar": {
+      "placeholder": "Sélectionnez une lettre afin d’afficher les infos",
+      "type": "Type",
+      "recipient": "Destinataire",
+      "cost": "Coût",
+      "podArchive": "Lien Archives preuve de dépôt",
+      "podStatus": "Statut de la preuve de dépôt",
+      "podCode": "Code-barres de la preuve de dépôt",
+      "status": "Statut",
+      "filename": "Nom du fichier",
+      "dateSent": "Date d’envoi",
+      "archiveLink": "Lien d’archive"
+    },
+    "filterBar": {
+      "newLetter": "Nouveau courrier",
+      "plcSearch": "Rechercher par mots-clés et noms de fichiers",
+      "plcStatus": "Sélectionner le statut",
+      "before": "Avant",
+      "after": "Après",
+      "selectFilter": "Sélectionner un filtre",
+      "datePlaceholder": "JJ/MM/AAAA"
+    },
+    "dataTable": {
+      "returned": "Retourné",
+      "failed": "Échoué",
+      "inProgress": "En cours",
+      "success": "Réussi",
+      "noResults": "Aucun résultat",
+      "noResultsHelp": "Essayez de modifier vos filtres ou vos mots-clés de recherche"
+    }
+  },
+  "newLetter": {
+    "title": "Envoyer une nouvelle lettre",
+    "selectDocument": {
+      "send": "Envoyer",
+      "sendBulk": "Envoi en masse",
+      "cancel": "Annuler"
+    },
+    "address": {
+      "title": "Destinataire",
+      "firstname": "Prénom",
+      "lastname": "Nom",
+      "company": "Entreprise",
+      "street": "Rue",
+      "house": "N°",
+      "flat": "Bus N°",
+      "city": "Ville",
+      "zip": "Code postal",
+      "country": "Pays"
+    },
+    "mailOptions": {
+      "title": "Options de courrier",
+      "standard": "Lettre standard",
+      "registered": "Lettre recommandée"
+    },
+    "language": {
+      "title": "Langue de la lettre",
+      "select": "Sélectionner la langue",
+      "english": "Anglais",
+      "french": "Français",
+      "dutch": "Néerlandais"
+    },
+    "attachment": {
+      "title": "Pièce jointe",
+      "upload": "Ajouter un fichier",
+      "noFile": "Aucun fichier"
+    },
+    "return": {
+      "title": "Adresse de retour",
+      "edit": "Modifier",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "firstname": "Prénom",
+      "lastname": "Nom",
+      "company": "Entreprise",
+      "street": "Rue",
+      "house": "N°",
+      "flat": "Bus N°",
+      "city": "Ville",
+      "zip": "Code postal",
+      "country": "Pays"
+    },
+    "keywords": {
+      "title": "Mots-clés dans l’archive",
+      "keywords": "Mots-clés",
+      "add": "Ajouter"
+    },
+    "readers": {
+      "title": "Lecteurs pour Archives",
+      "notify": "Notifier les lecteurs par e-mail",
+      "add": "Ajouter"
+    },
+    "count": {
+      "title": "Nombre de lettres"
+    },
+    "next": "Suivant",
+    "previous": "Précédent",
+    "send": "Envoyer"
+  },
+  "otherLetters": {
+    "sender": "Expéditeur",
+    "view": "Afficher"
+  }
+}

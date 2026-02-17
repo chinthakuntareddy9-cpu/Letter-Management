@@ -1,0 +1,73 @@
+.language-selector {
+  position: relative;
+  display: inline-block;
+}
+
+/* Trigger button */
+.language-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid #d0d7de;
+  border-radius: 4px;
+  background: #fff;
+  color: #24292f;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.language-trigger:hover {
+  background: #f6f8fa;
+}
+
+.language-trigger:focus-visible {
+  outline: 2px solid #0969da;
+  outline-offset: 2px;
+}
+
+/* Flyout */
+.language-flyout {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 220px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: #fff;
+  border: 1px solid #d0d7de;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 1000;
+}
+
+/* Option buttons */
+.language-option {
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border: none;
+  background: transparent;
+  color: #24292f;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.language-option:hover {
+  background: #f6f8fa;
+}
+
+.language-option.is-active {
+  background: #eef6ff;
+  color: #0969da;
+}
+
+/* Optional: font awesome icon sizing */
+.language-selector .fa-solid {
+  font-size: 14px;
+}
+.selected-language {
+  font-size: 14px;
+}

@@ -1,0 +1,121 @@
+{
+  "title": "Brief beheer",
+  "sidebar": {
+    "myLetters": "Mijn brieven",
+    "otherLetters": "Andere brieven",
+    "admin": "Administratie",
+    "outgoing": "Admin - Uitgaande",
+    "incoming": "Admin - Inkomende",
+    "routingRules": "Sorteerregels",
+    "manualQueues": "Manuele Wachtrij",
+    "settings": "Instellingen"
+  },
+  "letterOverview": {
+    "otherLetters": {
+      "view": "Bekijken",
+      "others": "Zoek brieven verzonden door andere gebruikers"
+    },
+    "infobar": {
+      "placeholder": "Selecteer een brief om info te tonen",
+      "type": "Type",
+      "recipient": "Ontvanger",
+      "cost": "Kost",
+      "podArchive": "Archief link afgiftebewijs",
+      "podStatus": "Status afgiftebewijs",
+      "podCode": "Barcode afgiftebewijs",
+      "status": "Status",
+      "filename": "Bestandsnaam",
+      "dateSent": "Datum verzending",
+      "archiveLink": "Link archief"
+    },
+    "filterBar": {
+      "newLetter": "Nieuwe brief",
+      "plcSearch": "Zoek sleutelwoorden en bestandsnamen",
+      "plcStatus": "Selecteer status",
+      "before": "Voor",
+      "after": "Na",
+      "selectFilter": "Filter selecteren",
+      "datePlaceholder": "DD/MM/JJJJ"
+    },
+    "dataTable": {
+      "returned": "Retour",
+      "failed": "Mislukt",
+      "inProgress": "Bezig",
+      "success": "Geslaagd",
+      "noResults": "Geen resultaten",
+      "noResultsHelp": "Probeer uw filters of zoekwoorden aan te passen"
+    }
+  },
+  "newLetter": {
+    "title": "Nieuwe brief verzenden",
+    "selectDocument": {
+      "send": "Verzenden",
+      "sendBulk": "Verzenden in bulk",
+      "cancel": "Annuleren"
+    },
+    "address": {
+      "title": "Ontvanger",
+      "firstname": "Voornaam",
+      "lastname": "Achternaam",
+      "company": "Bedrijf",
+      "street": "Straat",
+      "house": "Huis nr.",
+      "flat": "Bus",
+      "city": "Stad",
+      "zip": "Postcode",
+      "country": "Land"
+    },
+    "mailOptions": {
+      "title": "Brief type",
+      "standard": "Standaard brief",
+      "registered": "Aangetekende brief"
+    },
+    "language": {
+      "title": "Taal brief",
+      "select": "Selecteer taal",
+      "english": "Engels",
+      "french": "Frans",
+      "dutch": "Nederlands"
+    },
+    "attachment": {
+      "title": "Bijlage",
+      "upload": "Bestand uploaden",
+      "noFile": "Geen bestand"
+    },
+    "return": {
+      "title": "Retour adres",
+      "edit": "Bewerken",
+      "save": "Opslaan",
+      "cancel": "Annuleren",
+      "firstname": "Voornaam",
+      "lastname": "Achternaam",
+      "company": "Bedrijf",
+      "street": "Straat",
+      "house": "Huis nr.",
+      "flat": "Bus",
+      "city": "Stad",
+      "zip": "Postcode",
+      "country": "Land"
+    },
+    "keywords": {
+      "title": "Sleutelwoord op archief",
+      "keywords": "Sleutelwoorden",
+      "add": "Toevoegen"
+    },
+    "readers": {
+      "title": "Lezers op archief",
+      "notify": "Lezers notificeren via email",
+      "add": "Toevoegen"
+    },
+    "count": {
+      "title": "Aantal brieven"
+    },
+    "next": "Volgende",
+    "previous": "Vorige",
+    "send": "Verzend"
+  },
+  "otherLetters": {
+    "sender": "Verzender",
+    "view": "Bekijken"
+  }
+}

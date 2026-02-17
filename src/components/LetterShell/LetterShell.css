@@ -1,0 +1,85 @@
+.letter-shell-container {
+  display: grid;
+  flex-direction: column; /* stacks children vertically */
+  gap: 16px; /* optional: space between elements */
+  align-items: flex-start;
+  padding: 25px 15px;
+}
+
+.letter-title-area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: space-between; /* pushes divs to opposite ends */
+  align-items: center; /* optional: vertically center */
+  width: 100%;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 30px;
+}
+
+.letter-title {
+  font-size: 32px;
+}
+
+.letter-options-area {
+  display: flex;
+  gap: 16px;
+  /* align-items: flex-end; */
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.btn-cancel {
+  background-color: #ffffff;
+  height: 37px;
+}
+
+/*    Stepper   */
+
+.stepper {
+  position: relative;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  width: 300px; /* adjust as needed */
+}
+
+.line {
+  position: absolute;
+  top: 50%;
+  left: 150px;
+  width: 150px;
+  height: 2px;
+  background-color: #e0e0e0;
+  z-index: 0; /* behind the steps */
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  position: relative;
+  z-index: 1; /* above the line */
+}
+
+.step {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f0f0f5;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.step.active {
+  background-color: #00a99d;
+  color: #fff;
+}
+
+

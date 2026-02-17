@@ -1,0 +1,120 @@
+{
+  "title": "Letter Management",
+  "sidebar": {
+    "myLetters": "My letters",
+    "otherLetters": "Other letters",
+    "admin": "Administration",
+    "outgoing": "Admin - Outgoing",
+    "incoming": "Admin - Incoming",
+    "routingRules": "Routing Rules",
+    "manualQueues": "Manual Queue",
+    "settings": "Settings"
+  },
+  "letterOverview": {
+    "otherLetters": {
+      "view": "View",
+      "others": "Search letters sent by other users"
+    },
+    "infobar": {
+      "type": "Type",
+      "recipient": "Recipient",
+      "cost": "Cost",
+      "podArchive": "Proof of Deposit archive link",
+      "podStatus": "Proof of Deposit status",
+      "podCode": "Proof of Deposit barcode",
+      "status": "Status",
+      "filename": "File name",
+      "dateSent": "Date sent",
+      "archiveLink": "Archive link"
+    },
+    "filterBar": {
+      "newLetter": "New letter",
+      "plcSearch": "Search keywords and file names",
+      "plcStatus": "Select status",
+      "before": "Before",
+      "after": "After",
+      "selectFilter": "Select filter",
+      "datePlaceholder": "DD/MM/YYYY"
+    },
+    "dataTable": {
+      "returned": "Returned",
+      "failed": "Failed",
+      "inProgress": "In progress",
+      "success": "Success",
+      "noResults": "No resutls",
+      "noResultsHelp": "Try adjusting your filters or search keywords"
+    }
+  },
+  "newLetter": {
+    "title": "Send new letter",
+    "selectDocument": {
+      "send": "Send letter",
+      "sendBulk": "Send letters in bulk",
+      "cancel": "Cancel"
+    },
+    "address": {
+      "title": "Recipient",
+      "firstname": "First name",
+      "lastname": "Last name",
+      "company": "Company",
+      "street": "Street",
+      "house": "House",
+      "flat": "Flat no.",
+      "city": "City",
+      "zip": "ZIP code",
+      "country": "Country"
+    },
+    "mailOptions": {
+      "title": "Mail options",
+      "standard": "Standard letter",
+      "registered": "Registered letter"
+    },
+    "language": {
+      "title": "Letter language",
+      "select": "Select language",
+      "english": "English",
+      "french": "French",
+      "dutch": "Dutch"
+    },
+    "attachment": {
+      "title": "Attachment",
+      "upload": "Upload file",
+      "noFile": "No file"
+    },
+    "return": {
+      "title": "Return address",
+      "edit": "Edit",
+      "save": "Next",
+      "cancel": "Cancel",
+      "firstname": "First name",
+      "lastname": "Last name",
+      "company": "Company",
+      "street": "Street",
+      "house": "House",
+      "flat": "Flat no.",
+      "city": "City",
+      "zip": "ZIP code",
+      "country": "Country"
+    },
+    "keywords": {
+      "title": "Keywords on archive",
+      "keywords": "Keywords",
+      "add": "Add"
+    },
+    "readers": {
+      "title": "Readers on archive",
+      "notify": "Notify readers by email",
+      "add": "Add"
+    },
+    "count": {
+      "title": "Letter count"
+    },
+    "next": "",
+    "previous": "",
+    "send": "Sender"
+  },
+  "otherLetters": {
+    "sender": "Sender",
+    "view": "View"
+  }
+}
