@@ -1,5 +1,5 @@
 // src/components/Dashboard/Dashboard.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   useNavigate,
   BrowserRouter,
@@ -7,6 +7,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
+import axios from "axios";
 import "./Dashboard.css";
 import { dashboardData } from "../../constant/Dashboard.constant";
 import { useTranslation } from "react-i18next";
@@ -60,6 +61,63 @@ const Dashboard = () => {
   const [beforeOption, setBeforeOption] = useState("");
   const [dateFilter, setDateFilter] = useState("");
   const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
+  const [loading, setLoading] = useState(true);
+  const [apiError, setApiError] = useState(null);
+
+  // Fetch data from API
+  useEffect(() => {
+    const fetchLetters = async () => {
+      try {
+        setLoading(true);
+        setApiError(null);
+        
+        const response = await axios.get(
+          "https://letters-test-hfaffqhaa0crfjgj.westeurope-01.azurewebsites.net/Letters",
+          {
+            params: {
+              orderBy: "LetterAddressee",
+              pageNumber: 1
+            }
+          }
+        );
+        
+        console.log("API Response:", response.data);
+        
+        // Transform API data to match your table structure if needed
+        // This depends on your API response format
+        
+      } catch (error) {
+        console.error("Error fetching letters:", error);
+        setApiError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchLetters();
+  }, []);
+
+  // Display loading state
+  if (loading) {
+    return (
+      <div className="dashboard">
+        <div style={{ padding: "20px", textAlign: "center" }}>
+          <p>Loading letters...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Display error state
+  if (apiError) {
+    return (
+      <div className="dashboard">
+        <div style={{ padding: "20px", color: "red" }}>
+          <p>Error loading data: {apiError}</p>
+        </div>
+      </div>
+    );
+  }
 
   const tStatus = (code) => {
     switch (code) {
